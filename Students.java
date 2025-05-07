@@ -1,3 +1,19 @@
+class Courses{
+    int[] sub = new int[3];
+
+    Courses(int[] sub) {
+        this.sub = sub;
+    }
+
+    public void getMarks(){
+        for(int i=0; i<sub.length; i++){
+            if(sub[i] <= 40){
+                System.out.println("Subject " + (i+1) + ": " + sub[i]);
+            }
+        }
+    }
+}
+
 public class Students {
     String name, program, course;
     int sem;
@@ -15,7 +31,11 @@ public class Students {
     }
 
     public static void main(String[] args) {
-        Students student1 = new Students("soniya", "Computer Science", 2);
+        Students student1 = new Students("Soniya ", "Computer Science", 2);
         student1.display();
+
+        Courses courses1 = new Courses(new int[]{45, 30, 50});
+        System.out.println("Marks in subjects below 40:");
+        courses1.getMarks();
     }
 }
